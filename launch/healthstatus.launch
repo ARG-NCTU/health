@@ -1,3 +1,0 @@
-<launch>
-    <node name="healthstatus" pkg="health" type="healthstatus.py" />
-</launch>
