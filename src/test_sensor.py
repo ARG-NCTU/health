@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import rospy
+import pytest
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
 
