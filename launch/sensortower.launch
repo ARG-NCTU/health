@@ -2,6 +2,7 @@
 	<node name="sensortower1" pkg="health" type="sensortower1.py" />
 	<node name="sensortower2" pkg="health" type="sensortower2.py" />
 	<node name="sensortower3" pkg="health" type="sensortower3.py" />
+	<node name="sensortower4" pkg="health" type="sensortower4.py" />
 	
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
 		<arg name="port" value="9090"/>
