@@ -1,0 +1,7 @@
+<launch>
+	<node name="zedtower_good" pkg="health" type="zedtower_good.py" />
+	
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+		<arg name="port" value="9090"/>
+	</include>
+</launch>
