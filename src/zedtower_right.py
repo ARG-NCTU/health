@@ -9,11 +9,11 @@ def callback_zed(data):
     HealthStatus[0] = 1
     
 def listener():
-    rospy.init_node('sensortower2', anonymous=True)
-    rospy.Subscriber("/zed/zed_node/left_raw/image_raw_color", Image, callback_zed)
-    pub = rospy.Publisher('health/sensortower2', String, queue_size=10)
+    rospy.init_node('zedtower_right', anonymous=True)
+    rospy.Subscriber("/wamv/zed_right/zed_node/rgb/image_rect_color", Image, callback_zed)
+    pub = rospy.Publisher('health/zedtower_right', String, queue_size=10)
     while not rospy.is_shutdown():
-        healthstring = 'sensortower2@' + str(HealthStatus[0]) + ':' + str(HealthStatus[1]) + ':' + str(HealthStatus[2])
+        healthstring = 'zedtower_right@' + str(HealthStatus[0]) + ':' + str(HealthStatus[1]) + ':' + str(HealthStatus[2])
         print(healthstring)
         pub.publish(healthstring)
         HealthStatus[0] = 0

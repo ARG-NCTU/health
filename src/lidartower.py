@@ -13,12 +13,12 @@ def callback_lidar(data):
     HealthStatus[2] = 1
     
 def listener():
-    rospy.init_node('sensortower4', anonymous=True)
+    rospy.init_node('lidartower', anonymous=True)
     rospy.Subscriber("/wamv/RL/scan", LaserScan, callback_lidar)
     rospy.Subscriber("/lidartower/radar_2/ti_mmwave/ti_mmwave/radar_scan", RadarScan, callback_mmwave1)
-    pub = rospy.Publisher('health/sensortower4', String, queue_size=10)
+    pub = rospy.Publisher('health/lidartower', String, queue_size=10)
     while not rospy.is_shutdown():
-        healthstring = 'sensortower4@' + str(HealthStatus[0]) + ':' + str(HealthStatus[1]) + ':' + str(HealthStatus[2])
+        healthstring = 'lidartower@' + str(HealthStatus[0]) + ':' + str(HealthStatus[1]) + ':' + str(HealthStatus[2])
         print(healthstring)
         pub.publish(healthstring)
         HealthStatus[0] = 0
