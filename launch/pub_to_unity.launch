@@ -1,3 +1,7 @@
 <launch>
 	<node name="pub_to_unity" pkg="health" type="pub_to_unity.py" />
+	
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+		<arg name="port" value="9090"/>
+	</include>
 </launch>
