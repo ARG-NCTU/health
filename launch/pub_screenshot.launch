@@ -1,0 +1,9 @@
+<launch>
+	<node name="pub_screenshot" pkg="health" type="pub_screenshot.py" />
+
+	<node name="img_to_compress" pkg="image_transport" type="republish" args="raw in:=/screenshot compressed t:=/camera/image_repub" />
+
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+		<arg name="port" value="9090"/>
+	</include>
+</launch>
