@@ -3,6 +3,7 @@
 	<node name="zedtower_mid" pkg="health" type="zedtower_mid.py" />
 	<node name="zedtower_right" pkg="health" type="zedtower_right.py" />
 	<node name="lidartower" pkg="health" type="lidartower.py" />
+	<node name="estop_status" pkg="health" type="estop_status.py" />
 	
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
 		<arg name="port" value="9090"/>
